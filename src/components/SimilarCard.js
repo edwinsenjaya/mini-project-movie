@@ -8,7 +8,7 @@ function Card() {
   const dispatch = useDispatch();
   const { nowPlayingMovies, errorMessage } = useSelector((state) => state);
   const imageUrl = `https://image.tmdb.org/t/p/original`;
-  console.log(nowPlayingMovies, "card");
+  console.log(nowPlayingMovies, "similar card");
 
   if (errorMessage) {
     Swal.fire("", errorMessage, "error");

@@ -1,7 +1,14 @@
-import { GET_NOW_PLAYING, ERROR_MESSAGE } from "./actionType";
+import {
+  GET_NOW_PLAYING,
+  ERROR_MESSAGE,
+  GET_SIMILAR,
+  GET_MOVIE,
+} from "./actionType";
 
 const initialState = {
   nowPlayingMovies: [],
+  similarMovies: [],
+  movieData: {},
   errorMessage: "",
 };
 
@@ -11,6 +18,16 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         nowPlayingMovies: action.payload,
+      };
+    case GET_MOVIE:
+      return {
+        ...state,
+        movieData: action.payload,
+      };
+    case GET_SIMILAR:
+      return {
+        ...state,
+        similarMovies: action.payload,
       };
     case ERROR_MESSAGE:
       return {
