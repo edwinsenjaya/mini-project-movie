@@ -14,7 +14,7 @@ function Photo() {
   useEffect(() => {
     dispatch(fetchMovie(id));
     dispatch(fetchSimilar(id));
-  }, []);
+  }, [movieData]);
 
   if (!movieData) {
     return (
