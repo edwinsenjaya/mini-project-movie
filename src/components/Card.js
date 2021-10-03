@@ -8,7 +8,6 @@ function Card() {
   const dispatch = useDispatch();
   const { nowPlayingMovies, errorMessage } = useSelector((state) => state);
   const imageUrl = `https://image.tmdb.org/t/p/original`;
-  console.log(nowPlayingMovies, "card");
 
   if (errorMessage) {
     Swal.fire("", errorMessage, "error");
@@ -48,12 +47,11 @@ function Card() {
                   <h6 className="card-title text-center fw-bold">
                     {movie.title}
                   </h6>
-                  <span className="rounded text-center fw-normal fst-italic bg-warning text-dark flex-inline mb-2 fs-6">
-                    Release Date:{" "}
-                    {format(new Date(movie.release_date), "d MMMM y")}
+                  <span className="rounded text-center fw-bold fst-italic bg-warning text-dark flex-inline mb-2 fs-6">
+                    Release: {format(new Date(movie.release_date), "d MMMM y")}
                   </span>
-                  <p className="card-text text-center lh-sm text-capitalize">
-                    Vote: {movie.vote_average}
+                  <p className="card-text text-center lh-sm text-capitalize fw-bold">
+                    Rating: {movie.vote_average}
                   </p>
                 </div>
               </div>

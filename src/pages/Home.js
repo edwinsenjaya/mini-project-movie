@@ -10,7 +10,6 @@ function Home() {
   useEffect(() => {
     dispatch(fetchNowPlaying());
   }, []);
-  //   console.log(nowPlayingMovies);
 
   return (
     <div className="container d-flex flex-column vw-100">
@@ -22,17 +21,6 @@ function Home() {
           Browse through our collection of the latest movies now playing in
           theaters!
         </p>
-        {/* <div className="form-floating mb-3">
-          <input
-            type="text"
-            className="form-control"
-            id="floatingInput"
-            placeholder="example"
-          />
-          <label className="ms-4" for="floatingInput">
-            Search anything here!
-          </label>
-        </div> */}
       </div>
       <div className="row">
         <div className="col-12">

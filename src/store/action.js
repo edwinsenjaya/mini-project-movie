@@ -24,6 +24,15 @@ export function getMovie(payload) {
   return actionGetMovie;
 }
 
+export function getSimilar(payload) {
+  const actionGetSimilar = {
+    type: GET_SIMILAR,
+    payload,
+  };
+
+  return actionGetSimilar;
+}
+
 export function fetchNowPlaying() {
   return async function (dispatch) {
     const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=ff7717b8f6b805ed52b895c55b728d1d`;
@@ -52,6 +61,22 @@ export function fetchMovie(id) {
       );
     } else {
       dispatch(getMovie(data));
+    }
+  };
+}
+
+export function fetchSimilar(id) {
+  return async function (dispatch) {
+    const url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=ff7717b8f6b805ed52b895c55b728d1d`;
+
+    const { data } = await axios.get(`${url}`);
+
+    if (!data) {
+      dispatch(
+        errorHandler("Something went wrong while trying to get the data 😟")
+      );
+    } else {
+      dispatch(getSimilar(data.results));
     }
   };
 }
