@@ -1,0 +1,3 @@
+export const GET_NOW_PLAYING = "GET_NOW_PLAYING";
+
+export const ERROR_MESSAGE = "ERROR_MESSAGE";
