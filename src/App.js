@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// https://movies-mini-project.web.app
 
 function App() {
   return (
