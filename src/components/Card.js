@@ -34,7 +34,12 @@ function Card() {
             <div key={movie.id} className="col">
               <div className="card h-100 border border-dark border-2">
                 <div className="row">
-                  <Link to={`/movie/${movie.id}`}>
+                  <Link
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                    to={`/movie/${movie.id}`}
+                  >
                     <img
                       src={`${imageUrl}${movie.poster_path}`}
                       className="card-img-top"

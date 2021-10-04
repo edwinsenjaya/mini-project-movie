@@ -1,11 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNowPlaying } from "../store/action";
+// import InfiniteScroll from "react-infinite-scroll-component";
 
 import Card from "../components/Card";
 
 function Home() {
   const dispatch = useDispatch();
+  // let nextPage = 1;
+  // const { nowPlayingMovies, errorMessage } = useSelector((state) => state);
+  // const [movies, setMovies] = useState(nowPlayingMovies);
 
   useEffect(() => {
     dispatch(fetchNowPlaying());
@@ -27,6 +31,29 @@ function Home() {
           <div className="row row-cols-1 row-cols-md-4 g-4 mb-3">
             <Card />
           </div>
+          {/* <InfiniteScroll
+            dataLength={movies?.length}
+            next={() => {
+              console.log(movies, "mov");
+              nextPage++;
+              dispatch(fetchNowPlaying(nextPage));
+              setMovies([...movies, nowPlayingMovies]);
+            }}
+            hasMore={true}
+            loader={<h4 className="text-white">Loading...</h4>}
+            height={1000}
+            endMessage={
+              <p style={{ textAlign: "center" }}>
+                <b>Yay! You have seen it all</b>
+              </p>
+            }
+          >
+            {movies.map((el, index) => (
+              <div className="row row-cols-1 row-cols-md-4 g-4 mb-3">
+                <Card />
+              </div>
+            ))}
+          </InfiniteScroll> */}
         </div>
       </div>
     </div>

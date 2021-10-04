@@ -9,7 +9,7 @@ function Photo() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { movieData } = useSelector((state) => state);
-  const imageUrl = `https://image.tmdb.org/t/p/w500`;
+  const imageUrl = `https://image.tmdb.org/t/p/w400`;
 
   useEffect(() => {
     dispatch(fetchMovie(id));

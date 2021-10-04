@@ -33,9 +33,9 @@ export function getSimilar(payload) {
   return actionGetSimilar;
 }
 
-export function fetchNowPlaying() {
+export function fetchNowPlaying(page = 1) {
   return async function (dispatch) {
-    const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=ff7717b8f6b805ed52b895c55b728d1d`;
+    const url = `https://api.themoviedb.org/3/movie/now_playing?page=${page}&api_key=ff7717b8f6b805ed52b895c55b728d1d`;
 
     const { data } = await axios.get(`${url}`);
 
